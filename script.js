@@ -38,7 +38,7 @@ form.addEventListener('submit', async (e) => {
     let data = await fetchData(cityName.value)
     if(data.cod==200){
       lastCity.setItem('savedCity',cityName.value)
-
+      cityName.value='  '
       city.style.color='white'
       city.innerHTML=data.name
       currentDegree.innerHTML=Math.round(data.main.temp-273.15)
